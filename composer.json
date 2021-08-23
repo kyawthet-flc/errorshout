@@ -1,0 +1,30 @@
+{
+  "name": "kyawthet/errorshout",
+  "description": "Notify Errors to whom it may concern.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kyaw Thet",
+      "email": "kyawthet.2017.flc@gmail.com"
+    }
+  ],
+  "autoload": {
+     "psr-4": {
+        "Kyawthet\\ErrorShout\\": "src"
+     }
+   },
+  "autoload-dev": {
+    "psr-4": {
+      "Kyawthet\\ErrorShout\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-f": "vendor/bin/phpunit --filter"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "minimum-stability": "dev"
+}
