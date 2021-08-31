@@ -38,15 +38,29 @@ class ErrorShoutServiceProvider extends ServiceProvider
             $this->publishes([
               __DIR__.'/resources/assets' => public_path('errorshout'),
               ], 'es-assets');
-
-              
         
           }
 
-        // Loading Migrations Automatically (method 2)
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');   
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'errorshout');
-    }  
+          $this->routes();
+          $this->migrations();
+          $this->views();
+
+    }
+
+    protected function routes()
+    {
+       $this->loadRoutesFrom(__DIR__.'/routes/web.php');   
+    }
+
+    protected function migrations()
+    {
+       return $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+    }
+
+    protected function views()
+    {
+      // Loading Migrations Automatically (method 2)
+      $this->loadViewsFrom(__DIR__.'/resources/views', 'errorshout');
+    }
    
 }
